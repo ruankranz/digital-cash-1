@@ -28,3 +28,6 @@ def test_bank_balances():
 
     assert 990 == bank.fetch_balance(alice_public_key)
     assert 10 == bank.fetch_balance(bob_public_key)
+
+if __name__ == '__main__':
+    test_bank_balances()
