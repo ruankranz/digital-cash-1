@@ -64,3 +64,42 @@ def test_utxo():
 
     assert 500_000 - 10 == bank.fetch_balance(identities.alice_public_key)
     assert 500_000 + 10 == bank.fetch_balance(identities.bob_public_key)
+
+
+# These three tests cover the 3 cases described in #15 https://en.bitcoin.it/wiki/Protocol_rules#.22block.22_messages 
+def test_extend_active_chain():
+    # Same check as check_blocks above
+    pass
+
+def test_extend_side_chain():
+    # same as check_blocks -- but active_chain doesn't change
+    pass
+
+def test_change_active_chain():
+    # 2 chains with different amounts of work
+
+    # call node.handle_block() on a block that changes the balance
+
+    # Check that bank.active_chain and bank.active_chain_index both changed
+
+    # Transaction contained in old longest chain but not in new longest chain 
+    # 1. Back in mempool
+    # 2. Removed from utxo
+
+    # Check that transaction that was in both chains
+    # 1. Not in mempool
+    # 2. In utxo
+    pass
+
+def test_chainwork():
+    pass
+
+def test_mining():
+    # use a ridiculously low difficulty?
+    pass
+
+def test_tx_validation():
+    # test a coinbase
+    # node.validate_tx(tx, as_coinbase=True)
+    pass
+
